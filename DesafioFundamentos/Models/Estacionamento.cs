@@ -16,6 +16,7 @@ namespace DesafioFundamentos.Models
         {
             Console.WriteLine("Digite a placa do veiculo para estacionar:");
 
+            // Implementado - Adicionando de veículos no estacionamento
             veiculos.Add(Console.ReadLine());
 
             Console.WriteLine("Veículo estacionado!");
@@ -24,11 +25,14 @@ namespace DesafioFundamentos.Models
         public void RemoverVeiculo()
         {
             Console.WriteLine("Digite a placa do veículo para remover:");
+            // Implementado - Consulta e remoção de placa
             string placa = Console.ReadLine();
 
             if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
             {
                 Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+                
+                // Implementado - verificação e validação de valor da hora do veiculo estacionado.
                 int horas = int.Parse(Console.ReadLine());
                 decimal valorTotal = precoInicial + precoPorHora * horas;
 
@@ -46,6 +50,8 @@ namespace DesafioFundamentos.Models
             if (veiculos.Any())
             {
                 Console.WriteLine("Os veículos estacionados são:");
+
+                // Implementado - laço de repetição para listar veículos. 
                 foreach (string veiculo in veiculos)
                 {
                     Console.WriteLine(veiculo);
